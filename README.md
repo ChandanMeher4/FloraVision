@@ -81,6 +81,22 @@ npm run build
 
 ---
 
+## 🛠️ Technical Challenges & Solutions
+
+### 1. Aspect Ratio Maintenance in Responsive Grids
+**Challenge:** The provided office imagery varied in aspect ratio, causing the grid layout in the "A Calm Space for Healing" section to collapse or leave white space on mobile devices.
+**Solution:** Implemented the Tailwind `aspect-[4/5]` and `aspect-video` classes in conjunction with the Next.js `<Image />` component's `fill` property. This ensured the images remained contained and proportional across all breakpoints without manual height adjustments.
+
+### 2. Parent-Relative Image Scaling
+**Challenge:** Using the `fill` property caused images to shrink or disappear when wrapped in Framer Motion `Reveal` components or nested flexbox spans.
+**Solution:** Restructured the DOM hierarchy to ensure the `<Image />` component was a direct child of a `relative` container with defined dimensions. Removed unnecessary wrapper spans to allow the absolute positioning of the `fill` attribute to calculate the container size correctly.
+
+### 3. Smart Sticky Navigation Logic
+**Challenge:** Standard sticky navbars can be intrusive on smaller screens, especially when reading text-heavy clinical bios.
+**Solution:** Developed a custom hook to track the `scrollY` position. I applied a Framer Motion `animate` property to translate the navbar `-100%` on scroll-down and `0%` on scroll-up, providing a "Smart Sticky" experience that prioritizes user reading space.
+
+---
+
 ## 📄 License
 
 All Rights Reserved © 2026 Dr. Maya Reynolds, PsyD.
