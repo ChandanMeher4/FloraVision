@@ -4,7 +4,7 @@ A pixel-perfect, responsive recreation of the FloraVision landing page built wit
 
 ## Tech Stack
 
-- **Next.js 16** – React framework with App Router
+- **Next.js 15** – React framework with App Router
 - **Tailwind CSS 3** – Utility-first styling
 - **Framer Motion** – Scroll-triggered animations
 - **Google Fonts** – Inter & Indie Flower
