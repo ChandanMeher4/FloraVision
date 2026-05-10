@@ -39,7 +39,3 @@ npm run build
 ```
 
 ---
-
-## 📄 License
-
-All Rights Reserved © 2026 Dr. Maya Reynolds, PsyD.
