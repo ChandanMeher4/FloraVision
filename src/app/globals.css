@@ -2,7 +2,220 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #F9F7F2;
-  color: #2D2A26;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #1B2316;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .glass-card-product {
+    position: relative;
+    border-radius: 77px;
+    overflow: hidden;
+  }
+
+  .glass-card-product::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 77px;
+    padding: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.6) 0%, rgba(0,0,0,0.2) 52%, rgba(255,255,255,0.6) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .glass-card-product > .glass-inner {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 77px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .glass-card-pill {
+    position: relative;
+    border-radius: 80px;
+    overflow: hidden;
+  }
+
+  .glass-card-pill::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 80px;
+    padding: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.3) 62%, rgba(255,255,255,0.7) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .glass-card-pill > .glass-inner {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 80px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .glass-card-review {
+    position: relative;
+    border-radius: 77px;
+    overflow: hidden;
+  }
+
+  .glass-card-review::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 77px;
+    padding: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0.15) 52%, rgba(255,255,255,0.5) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .glass-card-review > .glass-inner {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 77px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 9px 18.4px rgba(0, 0, 0, 0.25);
+  }
+
+  .glass-card-section {
+    position: relative;
+    border-radius: 92px;
+    overflow: hidden;
+  }
+
+  .glass-card-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 92px;
+    padding: 3px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.6) 0%, rgba(0,0,0,0.15) 38%, rgba(255,255,255,0.6) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .glass-card-section > .glass-inner {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 92px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .glass-card-hero {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .glass-card-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(0,0,0,0.1) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .glass-card-hero > .glass-inner {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 24px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .glass-card-testimonial {
+    position: relative;
+    border-radius: 45px;
+    overflow: hidden;
+  }
+
+  .glass-card-testimonial::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 45px;
+    padding: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(102,102,102,0.4) 43%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .glass-card-testimonial > .glass-inner {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+    border-radius: 45px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .section-heading {
+    @apply text-white font-inter font-semibold;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-outline {
+    @apply border-2 border-white rounded-xl px-8 py-4 text-white font-inter transition-all duration-300;
+  }
+
+  .btn-outline:hover {
+    @apply bg-white/10;
+  }
 }

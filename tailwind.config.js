@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,22 +7,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        maya: {
-          sand: '#F9F7F2',      // The warm wall color
-          text: '#2D2A26',      // Deep charcoal (Professional)
-          terra: '#A87664',     // Brick Red (Accent)
-          sage: '#8FA89B',      // Plant Green (Secondary)
-          olive: '#747946',
-          muted: '#E5E0D8',     // Taupe for backgrounds
+        flora: {
+          dark: '#1B2316',
+          darker: '#1A2217',
         }
       },
       fontFamily: {
-        serif: ['Times New Roman', 'serif'], // Ideally, swap this for 'Playfair Display' if you know how to add fonts
-        sans: ['Arial', 'sans-serif'],       // Clean sans-serif
+        inter: ['Inter', 'sans-serif'],
+        indie: ['"Indie Flower"', 'cursive'],
+      },
+      backdropBlur: {
+        'glass': '25px',
+        'glass-lg': '40px',
       },
       borderRadius: {
-        'arch': '50% 50% 0 0', 
-      }
+        'card': '77px',
+        'pill': '151px',
+        'section': '92px',
+      },
     },
   },
   plugins: [],
